@@ -2,13 +2,13 @@ import React from 'react'
 
 import { AddChannel } from '../assets'
 
-const TeamChannelList = ({ children, error = false, loading, type }) => {
+const TeamChannelList = ({ children, error = false, loading, type, isCreating, setIsCreating, setCreateType, setIsEditing }) => {
     if (error) {
         return type === 'team'
             ? (
                 <div className="team-channel-list">
                     <p className="team-channel-list-message">
-                    연결 오류입니다. 잠시 기다렸다가 다시 시도하십시오.
+                        연결 오류입니다. 잠시 기다렸다가 다시 시도하십시오.
                     </p>
                 </div>
             )
@@ -36,8 +36,15 @@ const TeamChannelList = ({ children, error = false, loading, type }) => {
                     {type === 'team'
                         ? 'Channels'
                         : 'Direct Messages'
-                    } loading...
+                    }
                 </p>
+                <AddChannel
+                    isCreating={isCreating}
+                    setIsCreating={setIsCreating}
+                    setCreateType={setCreateType}
+                    setIsEditing={setIsEditing}
+                    type={type === 'team' ? 'team' : 'messaging'}
+                />
             </div>
             {children}
         </div>
