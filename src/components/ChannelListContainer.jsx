@@ -25,7 +25,7 @@ const SideBar = ({ logout }) => (
 
 const CompanyHeader = () => (
     <div className="channel-list__header">
-        <p className="channel-list__header__text">T Pager</p>
+        <p className="channel-list__header__text">T Chat</p>
     </div>
 )
 
@@ -128,9 +128,10 @@ const ChannelListContainer = ({setCreateType, setIsCreating, setIsEditing}) => {
                 />
             </div>
 
-            <div className="channel-list__container-responsive" style={{left: toggleContainer ? "0%" : "-89%", backgroundColor : "#005fff"}}>
+            <div className="channel-list__container-responsive" 
+            style={{left: toggleContainer ? "0%" : "-89%", backgroundColor : "#005fff"}}>
                 
-                <div className="channel-list__container-toggle" onClick={()=> setToggleContainer((prevToggleContainer) => !prevToggleContainer)}>
+                <div className="channerl-list__container-toggle" onClick={()=> setToggleContainer((prevToggleContainer) => !prevToggleContainer)}>
                 </div>
                 <ChannelListContent 
                 setIsCreating={setIsCreating}
